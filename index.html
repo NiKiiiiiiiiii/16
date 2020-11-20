@@ -8,13 +8,21 @@
 </head>
 <script>
   function MouseoverCahgeClass(){
-      document.getElementsByClassName("cl1").className= "cl2";
+      let elem = document.getElementById(1);
+      elem.classList.remove("cl1");
+      elem.classList.remove("cl5");
+      elem.classList.add("cl2");
+  }
+  function MouseoutChangeClass(){
+    let elem = document.getElementById(1);
+    elem.classList.remove("cl2");
+    elem.classList.add("cl5");
   }
 </script>
 <body>
  <table border="1">
       <tr>
-        <td><div class="cl1" onmouseover="MouseoverCahgeClass()">1elsement</div></td>
+        <td><div class="cl1" id="1" onmouseover="MouseoverCahgeClass()" onmouseout="MouseoutChangeClass()">1elsement</div></td>
         <td><div class="cl1">2elsement</div></td>
         <td><div class="cl1">3elsement</div></td>
         <td><div class="cl1">4elsement</div></td>
